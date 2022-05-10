@@ -1,0 +1,27 @@
+<annotation>
+  <folder>./</folder>
+  <filename>signals_e12c9d8d-40e3-439c-92ad-32d9146c023a.jpg</filename>
+  <path>.</path>
+  <source>
+    <database>jp_signals</database>
+    <annotation>PASCAL VOC2007</annotation>
+  </source>
+  <size>
+    <width>512</width>
+    <height>512</height>
+    <depth>3</depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>Traffic_Signal_Red</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>60</xmin>
+      <ymin>284</ymin>
+      <xmax>246</xmax>
+      <ymax>356</ymax>
+    </bndbox>
+  </object>
+</annotation>

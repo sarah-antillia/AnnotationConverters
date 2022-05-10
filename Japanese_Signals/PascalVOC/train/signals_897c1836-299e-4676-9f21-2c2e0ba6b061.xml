@@ -1,0 +1,39 @@
+<annotation>
+  <folder>./</folder>
+  <filename>signals_897c1836-299e-4676-9f21-2c2e0ba6b061.jpg</filename>
+  <path>.</path>
+  <source>
+    <database>jp_signals</database>
+    <annotation>PASCAL VOC2007</annotation>
+  </source>
+  <size>
+    <width>512</width>
+    <height>512</height>
+    <depth>3</depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>Traffic_Signal_Yellow</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>210</xmin>
+      <ymin>131</ymin>
+      <xmax>332</xmax>
+      <ymax>187</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>Pedestrian_Signal_Red</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>260</xmin>
+      <ymin>420</ymin>
+      <xmax>290</xmax>
+      <ymax>462</ymax>
+    </bndbox>
+  </object>
+</annotation>

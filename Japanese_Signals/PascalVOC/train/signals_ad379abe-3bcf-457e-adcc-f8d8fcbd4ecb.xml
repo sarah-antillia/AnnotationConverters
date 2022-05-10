@@ -1,0 +1,27 @@
+<annotation>
+  <folder>./</folder>
+  <filename>signals_ad379abe-3bcf-457e-adcc-f8d8fcbd4ecb.jpg</filename>
+  <path>.</path>
+  <source>
+    <database>jp_signals</database>
+    <annotation>PASCAL VOC2007</annotation>
+  </source>
+  <size>
+    <width>512</width>
+    <height>512</height>
+    <depth>3</depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>Pedestrian_Signal_Blue</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>389</xmin>
+      <ymin>355</ymin>
+      <xmax>427</xmax>
+      <ymax>437</ymax>
+    </bndbox>
+  </object>
+</annotation>

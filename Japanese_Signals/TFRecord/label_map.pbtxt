@@ -1,0 +1,25 @@
+item {
+  display_name: 'Pedestrian_Signal_Blue'
+  id: 1
+  name: 'Pedestrian_Signal_Blue'
+}
+item {
+  display_name: 'Pedestrian_Signal_Red'
+  id: 2
+  name: 'Pedestrian_Signal_Red'
+}
+item {
+  display_name: 'Traffic_Signal_Blue'
+  id: 3
+  name: 'Traffic_Signal_Blue'
+}
+item {
+  display_name: 'Traffic_Signal_Red'
+  id: 4
+  name: 'Traffic_Signal_Red'
+}
+item {
+  display_name: 'Traffic_Signal_Yellow'
+  id: 5
+  name: 'Traffic_Signal_Yellow'
+}
