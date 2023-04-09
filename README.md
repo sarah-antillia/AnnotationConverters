@@ -228,7 +228,7 @@ python ../../YOLO2COCOConverter.py ./yolo2coco_converter.conf
 version      = "2.1"
 
 [dataset]
-name         = "jp_signals"
+name         = "BUSI"
 copyright    = "antillia.com"
 version      = "2.0"
 classes      = "./classes.txt"
