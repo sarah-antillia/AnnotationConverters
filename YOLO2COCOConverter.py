@@ -234,7 +234,8 @@ if __name__ == '__main__':
     parser   = ConfigParser(config_ini) 
     classes_file  = parser.get(DATASET, "classes")
 
-    targets = ["train", "valid"]
+    targets = ["train", "valid", "test"]
+    
     for target in targets:
       #images_dir = director containing both images and annotation files.
       #YOLO_somewhere/train or YOLO_somewhere/valid

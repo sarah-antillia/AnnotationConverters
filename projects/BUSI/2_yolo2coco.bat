@@ -1,0 +1,1 @@
+python ../../YOLO2COCOConverter.py ./yolo2coco_converter.conf

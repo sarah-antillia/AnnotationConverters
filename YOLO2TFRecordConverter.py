@@ -38,8 +38,12 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 class YOLO2TFRecordConverter:
 
-  def __init__(self, images_dir, yolo_anno_dir, output_dir, 
-               dataset="train", filename="foo.tfrecord"):
+  def __init__(self, images_dir, 
+               yolo_anno_dir, 
+               output_dir, 
+               classes_file = "./classes.txt",
+               dataset      = "train", 
+               filename     = "foo.tfrecord"):
                
     self.images_dir    = images_dir
     self.yolo_anno_dir = yolo_anno_dir
@@ -47,7 +51,7 @@ class YOLO2TFRecordConverter:
     self.dataset       = dataset
     self.filename      = filename
     self.class_map     = []
-    classes_file       = os.path.join(yolo_anno_dir, "classes.txt")
+
     if os.path.exists(classes_file) == False:
       raise Exception("No found " + classes_file)
       
@@ -73,15 +77,16 @@ class YOLO2TFRecordConverter:
     except Exception as ex:
       print(ex)
 
-
+    if not os.path.exists(image_filepath):
+      raise Exception("Not found " + image_file)
     with tf.gfile.GFile(image_filepath, 'rb') as fid:
       encoded_jpg = fid.read()
 
       encoded_jpg_io = io.BytesIO(encoded_jpg)
       image = Image.open(encoded_jpg_io)
       width, height = image.size
-
       image_format = b'jpg'
+
       xmins = []
       xmaxs = []
       ymins = []
@@ -98,7 +103,7 @@ class YOLO2TFRecordConverter:
         print("Not found annotation file {}".format(anno_txt_filepath))
         return
               
-      with open(anno_txt_filepath,"r") as file:
+      with open(anno_txt_filepath, "r") as file:
 
         for row in file.readlines():
             
@@ -166,7 +171,6 @@ class YOLO2TFRecordConverter:
     
       source_id = 0    
       for image_file in image_files:
-    
         if image_file.endswith(".jpg"):
            
           source_id += 1
@@ -177,7 +181,7 @@ class YOLO2TFRecordConverter:
             writer.write(tf_example.SerializeToString())
           else:
             print("--- tf_example is None {}".format(image_file))
-
+            raise Exception("== tf_example is None " + image_file)
         if image_file.endswith(".png"):
           print("Sorry, png files not supported")
 
@@ -187,6 +191,7 @@ usage = "python YOLO2TFRecordConverter.py yolo2tfrecord_creator.conf "
 # python YOLO2TFRecordConverter.py ./yolo2tfrecord_converter.conf 
 # Example:
 # python YOLO2TFRecordConverter.py ./Japanese_Signals/yolo2tfrecord_converter.conf
+# python YOLO2TFRecordConverter.py ./projects/BUSI/yolo2tfrecord_converter.conf
 
 if __name__ == "__main__":
   config_ini = ""
@@ -232,8 +237,9 @@ if __name__ == "__main__":
       converter = YOLO2TFRecordConverter(images_dir, 
                  anno_dir, 
                  tfrecord_dir, 
-                 dataset  = target, 
-                 filename = filename)
+                 classes_file = classes_file,
+                 dataset      = target, 
+                 filename     = filename)
       converter.run()
         
 
